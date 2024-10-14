@@ -58,29 +58,31 @@
 }
 
 .container .search-bar {
-    text-align: center;
-    padding: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Align the input to the right */
+    padding: 1rem; /* Optional: Add padding if needed */
 }
 
 .container .search-bar input {
-    width: 600px;
+    width: 100%; /* Make it responsive */
+    max-width: 500px; /* Set a maximum width */
     padding: 0.7rem 1.5rem;
     font-size: 1.2rem;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.2); /* Keep background semi-transparent */
     color: white !important;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-/* Ensures the input doesn't turn white on focus */
+/* Optional: Style for focused state */
 .container .search-bar input:focus {
-    background-color: rgba(255, 255, 255, 0.2) ; /* Keep same background on focus */
-    border-color: rgba(255, 255, 255, 0.8);
-    outline: none;
-    color: white !important;
+    border-color: rgba(255, 255, 255, 1); /* Change border color on focus */
+    outline: none; /* Remove the default outline */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Optional: add shadow on focus */
 }
+
+
 
 .container .search-bar button {
     padding: 0.7rem 1.5rem;
@@ -111,5 +113,39 @@
 .container .search-bar input::placeholder {
     color: white; /* Placeholder text white */
     opacity: 1;   /* Full opacity for the placeholder text */
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: auto;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 2 columns minimum */
+    gap: 20px; /* Space between grid items */
+}
+
+.weather-data {
+    background-color: rgba(255, 255, 255, 0.336); /* Optional: background color for better visibility */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.exchange-rate-table {
+    background-color: rgba(255, 255, 255, 0.308); /* Optional */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+h4 {
+    color: white; /* Table header color */
+}
+
+/* Additional styling for the table */
+.table {
+    width: 100%; /* Make the table full-width */
+    color: white; /* Table text color */
 }
 
